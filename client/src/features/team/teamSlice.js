@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const customTeamApi = createApi({
   reducerPath: "customTeamApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:3003",
+    baseUrl: import.meta.env.VITE_URL,
   }),
   tagTypes: ["Team"],
   endpoints: (builder) => ({
