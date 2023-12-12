@@ -9,7 +9,7 @@ export const STATUSES = Object.freeze({
 
 export const getUsers = createAsyncThunk(
   "users/getUsers",
-  async ({ page, limit }) => {
+  async ({ page=1, limit=20 }) => {
     const res = await usersApi.get(`/users?_limit=${limit}&_page=${page}`);
     return res?.data;
   }
